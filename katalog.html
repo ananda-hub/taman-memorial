@@ -1,364 +1,457 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Katalog - Memorial Park</title>
-    
+
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Ikon -->
     <script src="https://unpkg.com/@phosphor-icons/web@2.0.3"></script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <!-- 1. Header & Navbar -->
     <!-- (PERBAIKAN) class="scrolled" dihapus agar transparan di awal -->
     <header id="main-header">
-        <nav class="container">
-            
-            <!-- Logo -->
-            <a href="index.html" class="logo">
-                <div class="logo-icon">M</div>
-                <div class="logo-text">
-                    Memorial Park
-                    <span>Tempat Peristirahatan Terakhir</span>
-                </div>
-            </a>
+      <nav class="container">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+          <div class="logo-icon">M</div>
+          <div class="logo-text">
+            Memorial Park
+            <span>Tempat Peristirahatan Terakhir</span>
+          </div>
+        </a>
 
-            <!-- Nav Links (Desktop) -->
-            <ul class="nav-links" id="nav-menu">
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="katalog.html" class="active">Katalog</a></li>
-                <li><a href="tentang.html">Tentang</a></li>
-                <li><a href="kontak.html">Kontak</a></li>
-            </ul>
+        <!-- Nav Links (Desktop) -->
+        <ul class="nav-links" id="nav-menu">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="katalog.html" class="active">Katalog</a></li>
+          <li><a href="tentang.html">Tentang</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
 
-            <!-- Tombol CTA -->
-            <a href="kontak.html" class="cta-button">
-                <i class="ph-fill ph-phone"></i>
-                Hubungi Kami
-            </a>
+        <!-- Tombol CTA -->
+        <a href="kontak.html" class="cta-button">
+          <i class="ph-fill ph-phone"></i>
+          Hubungi Kami
+        </a>
 
-            <!-- Tombol Mobile Toggle -->
-            <button id="mobile-toggle">
-                <i class="ph ph-list"></i>
-            </button>
-        </nav>
+        <!-- Tombol Mobile Toggle -->
+        <button id="mobile-toggle">
+          <i class="ph ph-list"></i>
+        </button>
+      </nav>
     </header>
 
     <main>
-        
-        <!-- 2. Catalog Hero Section -->
-        <section id="catalog-hero">
-            <div class="catalog-hero-content">
-                <h1>Katalog Pemakaman</h1>
-                <div class="title-accent"></div>
-                <p>Temukan tempat peristirahatan yang sempurna</p>
+      <!-- 2. Catalog Hero Section -->
+      <section id="catalog-hero">
+        <div class="catalog-hero-content">
+          <h1>Katalog Pemakaman</h1>
+          <div class="title-accent"></div>
+          <p>Temukan tempat peristirahatan yang sempurna</p>
+        </div>
+      </section>
+
+      <!-- 3. Filter Bar Section -->
+      <section id="filter-bar">
+        <div class="container filter-container">
+          <!-- Input Pencarian -->
+          <div class="filter-search">
+            <i class="ph ph-magnifying-glass"></i>
+            <input type="text" id="search-input" placeholder="Cari paket..." />
+          </div>
+
+          <!-- Dropdown Kategori -->
+          <div class="filter-dropdown">
+            <select id="category-select" required>
+              <option value="" disabled selected hidden>Semua Kategori</option>
+              <option value="">Semua Kategori</option>
+              <option value="premium">Premium</option>
+              <option value="standar">Standar</option>
+              <option value="exclusive">Exclusive</option>
+            </select>
+          </div>
+
+          <!-- Dropdown Lokasi -->
+          <div class="filter-dropdown">
+            <select id="location-select" required>
+              <option value="" disabled selected hidden>Semua Lokasi</option>
+              <option value="">Semua Lokasi</option>
+              <option value="Jakarta">Jakarta</option>
+              <option value="Bogor">Bogor</option>
+              <option value="Tangerang">Tangerang</option>
+              <option value="Depok">Depok</option>
+              <option value="Bekasi">Bekasi</option>
+              <option value="Cianjur">Cianjur</option>
+            </select>
+          </div>
+
+          <!-- Tombol Reset -->
+          <button class="btn-reset" id="reset-button">Reset Filter</button>
+        </div>
+      </section>
+
+      <!-- 4. Catalog Grid Section -->
+      <section id="catalog-grid-section">
+        <div class="container">
+          <!-- (DIHAPUS) Elemen hitungan paket -->
+          <!-- <p class="result-count" id="result-count">Menampilkan 9 paket</p> -->
+
+          <!-- (BARU) Pesan "Tidak Ada Hasil" (tersembunyi) -->
+          <p id="no-results-message" class="hidden">
+            Maaf, tidak ada paket yang cocok dengan pencarian Anda.
+          </p>
+
+          <div class="packages-grid" id="package-grid">
+            <!-- Paket 1 -->
+            <div
+              class="package-card catalog-card"
+              data-name="Taman Harmoni Deluxe"
+              data-category="premium"
+              data-location="Jakarta Selatan"
+            >
+              <div class="package-image">
+                <img src="img/tamanharmoni.png" alt="Taman Harmoni Deluxe" />
+                <span class="package-badge">Premium</span>
+              </div>
+              <div class="package-content">
+                <h3>Taman Harmoni Deluxe</h3>
+                <p class="package-description">
+                  Paket premium dengan lokasi strategis di area taman yang
+                  paling indah dengan pemandangan danau.
+                </p>
+                <div class="package-location">
+                  <i class="ph ph-map-pin"></i>
+                  <span>Jakarta Selatan</span>
+                </div>
+                <div class="package-info">
+                  <i class="ph ph-ruler"></i>
+                  <span>Ukuran: 2m x 2m</span>
+                </div>
+                <div class="package-info">
+                  <i class="ph ph-plant"></i>
+                  <span>Fasilitas: Nisan Granit Premium, Taman Bunga</span>
+                </div>
+                <div class="package-price">Rp 45.000.000</div>
+                <a
+                  href="booking.html?paket=Taman%20Harmoni%20Deluxe"
+                  class="btn-book"
+                  >Booking Sekarang</a
+                >
+              </div>
             </div>
-        </section>
 
-        <!-- 3. Filter Bar Section -->
-        <section id="filter-bar">
-            <div class="container filter-container">
-                
-                <!-- Input Pencarian -->
-                <div class="filter-search">
-                    <i class="ph ph-magnifying-glass"></i>
-                    <input type="text" id="search-input" placeholder="Cari paket...">
+            <!-- Paket 2 -->
+            <div
+              class="package-card catalog-card"
+              data-name="Taman Damai Standar"
+              data-category="standar"
+              data-location="Jakarta Timur"
+            >
+              <div class="package-image">
+                <img src="img/tamandamai.png" alt="Taman Damai Standar" />
+                <span class="package-badge">Standar</span>
+              </div>
+              <div class="package-content">
+                <h3>Taman Damai Standar</h3>
+                <p class="package-description">
+                  Paket standar dengan fasilitas lengkap di area taman yang asri
+                  dan nyaman untuk keluarga.
+                </p>
+                <div class="package-location">
+                  <i class="ph ph-map-pin"></i>
+                  <span>Jakarta Timur</span>
                 </div>
-
-                <!-- Dropdown Kategori -->
-                <div class="filter-dropdown">
-                    <select id="category-select" required>
-                        <option value="" disabled selected hidden>Semua Kategori</option>
-                        <option value="">Semua Kategori</option>
-                        <option value="premium">Premium</option>
-                        <option value="standar">Standar</option>
-                        <option value="exclusive">Exclusive</option>
-                    </select>
+                <div class="package-info">
+                  <i class="ph ph-ruler"></i>
+                  <span>Ukuran: 1.5m x 2m</span>
                 </div>
-
-                <!-- Dropdown Lokasi -->
-                <div class="filter-dropdown">
-                    <select id="location-select" required>
-                        <option value="" disabled selected hidden>Semua Lokasi</option>
-                        <option value="">Semua Lokasi</option>
-                        <option value="Jakarta">Jakarta</option>
-                        <option value="Bogor">Bogor</option>
-                        <option value="Tangerang">Tangerang</option>
-                        <option value="Depok">Depok</option>
-                        <option value="Bekasi">Bekasi</option>
-                        <option value="Cianjur">Cianjur</option>
-                    </select>
+                <div class="package-info">
+                  <i class="ph ph-plant"></i>
+                  <span>Fasilitas: Nisan Marmer, Taman Hijau</span>
                 </div>
-
-                <!-- Tombol Reset -->
-                <button class="btn-reset" id="reset-button">Reset Filter</button>
-
+                <div class="package-price">Rp 28.000.000</div>
+                <a
+                  href="booking.html?paket=Taman%20Damai%20Standar"
+                  class="btn-book"
+                  >Booking Sekarang</a
+                >
+              </div>
             </div>
-        </section>
 
-        <!-- 4. Catalog Grid Section -->
-        <section id="catalog-grid-section">
-            <div class="container">
-                
-                <!-- (DIHAPUS) Elemen hitungan paket -->
-                <!-- <p class="result-count" id="result-count">Menampilkan 9 paket</p> -->
-
-                <!-- (BARU) Pesan "Tidak Ada Hasil" (tersembunyi) -->
-                <p id="no-results-message" class="hidden">Maaf, tidak ada paket yang cocok dengan pencarian Anda.</p>
-
-                <div class="packages-grid" id="package-grid">
-                    
-                    <!-- Paket 1 -->
-                    <div class="package-card catalog-card" data-name="Taman Harmoni Deluxe" data-category="premium" data-location="Jakarta Selatan">
-                        <div class="package-image">
-                            <img src="/img/tamanharmoni.png" alt="Taman Harmoni Deluxe">
-                            <span class="package-badge">Premium</span>
-                        </div>
-                        <div class="package-content">
-                            <h3>Taman Harmoni Deluxe</h3>
-                            <p class="package-description">Paket premium dengan lokasi strategis di area taman yang paling indah dengan pemandangan danau.</p>
-                            <div class="package-location">
-                                <i class="ph ph-map-pin"></i>
-                                <span>Jakarta Selatan</span>
-                            </div>
-                            <div class="package-info">
-                                <i class="ph ph-ruler"></i>
-                                <span>Ukuran: 2m x 2m</span>
-                            </div>
-                            <div class="package-info">
-                                <i class="ph ph-plant"></i>
-                                <span>Fasilitas: Nisan Granit Premium, Taman Bunga</span>
-                            </div>
-                            <div class="package-price">Rp 45.000.000</div>
-                            <a href="booking.html?paket=Taman%20Harmoni%20Deluxe" class="btn-book">Booking Sekarang</a>
-                        </div>
-                    </div>
-
-                    <!-- Paket 2 -->
-                    <div class="package-card catalog-card" data-name="Taman Damai Standar" data-category="standar" data-location="Jakarta Timur">
-                        <div class="package-image">
-                            <img src="/img/tamandamai.png" alt="Taman Damai Standar">
-                            <span class="package-badge">Standar</span>
-                        </div>
-                        <div class="package-content">
-                            <h3>Taman Damai Standar</h3>
-                            <p class="package-description">Paket standar dengan fasilitas lengkap di area taman yang asri dan nyaman untuk keluarga.</p>
-                            <div class="package-location">
-                                <i class="ph ph-map-pin"></i>
-                                <span>Jakarta Timur</span>
-                            </div>
-                            <div class="package-info">
-                                <i class="ph ph-ruler"></i>
-                                <span>Ukuran: 1.5m x 2m</span>
-                            </div>
-                            <div class="package-info">
-                                <i class="ph ph-plant"></i>
-                                <span>Fasilitas: Nisan Marmer, Taman Hijau</span>
-                            </div>
-                            <div class="package-price">Rp 28.000.000</div>
-                            <a href="booking.html?paket=Taman%20Damai%20Standar" class="btn-book">Booking Sekarang</a>
-                        </div>
-                    </div>
-
-                    <!-- Paket 3 -->
-                    <div class="package-card catalog-card" data-name="Memorial Garden Exclusive" data-category="exclusive" data-location="Jakarta Barat">
-                        <div class="package-image">
-                            <img src="/img/memorialex.png" alt="Memorial Garden Exclusive">
-                            <span class="package-badge">Exclusive</span>
-                        </div>
-                        <div class="package-content">
-                            <h3>Memorial Garden Exclusive</h3>
-                            <p class="package-description">Paket eksklusif dengan desain kustom dan fasilitas terlengkap di area taman memorial private.</p>
-                            <div class="package-location">
-                                <i class="ph ph-map-pin"></i>
-                                <span>Jakarta Barat</span>
-                            </div>
-                            <div class="package-info">
-                                <i class="ph ph-ruler"></i>
-                                <span>Ukuran: 3m x 3m</span>
-                            </div>
-                            <div class="package-info">
-                                <i class="ph ph-plant"></i>
-                                <span>Fasilitas: Nisan Custom Design, Taman Private</span>
-                            </div>
-                            <div class="package-price">Rp 75.000.000</div>
-                            <a href="booking.html?paket=Memorial%20Garden%20Exclusive" class="btn-book">Booking Sekarang</a>
-                        </div>
-                    </div>
-
-                    <!-- Paket 4 -->
-                    <div class="package-card catalog-card" data-name="Taman Sejahtera" data-category="standar" data-location="Tangerang">
-                        <div class="package-image">
-                            <img src="/img/tamansejahtera.png" alt="Taman Sejahtera">
-                            <span class="package-badge">Standar</span>
-                        </div>
-                        <div class="package-content">
-                            <h3>Taman Sejahtera</h3>
-                            <p class="package-description">Lokasi strategis dengan suasana tenang dan pemandangan hijau yang menenangkan jiwa.</p>
-                            <div class="package-location">
-                                <i class="ph ph-map-pin"></i>
-                                <span>Tangerang</span>
-                            </div>
-                            <div class="package-info">
-                                <i class="ph ph-ruler"></i>
-                                <span>Ukuran: 1.5m x 2m</span>
-                            </div>
-                            <div class="package-info">
-                                <i class="ph ph-plant"></i>
-                                <span>Fasilitas: Nisan Marmer, Taman Terawat</span>
-                            </div>
-                            <div class="package-price">Rp 32.000.000</div>
-                            <a href="booking.html?paket=Taman%20Sejahtera" class="btn-book">Booking Sekarang</a>
-                        </div>
-                    </div>
-
-                    <!-- Paket 5 -->
-                    <div class="package-card catalog-card" data-name="Eternal Peace Premium" data-category="premium" data-location="Bekasi">
-                        <div class="package-image">
-                            <img src="/img/eternal-peace.png" alt="Eternal Peace Premium">
-                            <span class="package-badge">Premium</span>
-                        </div>
-                        <div class="package-content">
-                            <h3>Eternal Peace Premium</h3>
-                            <p class="package-description">Area premium dengan jalur pejalan kaki yang indah dan pencahayaan malam yang menenangkan.</p>
-                            <div class="package-location">
-                                <i class="ph ph-map-pin"></i>
-                                <span>Bekasi</span>
-                            </div>
-                            <div class="package-info">
-                                <i class="ph ph-ruler"></i>
-                                <span>Ukuran: 2m x 2.5m</span>
-                            </div>
-                            <div class="package-info">
-                                <i class="ph ph-plant"></i>
-                                <span>Fasilitas: Nisan Granit, Lighting System</span>
-                            </div>
-                            <div class="package-price">Rp 52.000.000</div>
-                            <a href="booking.html?paket=Eternal%20Peace%20Premium" class="btn-book">Booking Sekarang</a>
-                        </div>
-                    </div>
-
-                    <!-- Paket 6 -->
-                    <div class="package-card catalog-card" data-name="Taman Abadi" data-category="standar" data-location="Depok">
-                        <div class="package-image">
-                            <img src="/img/taman-abadi.png" alt="Taman Abadi">
-                            <span class="package-badge">Standar</span>
-                        </div>
-                        <div class="package-content">
-                            <h3>Taman Abadi</h3>
-                            <p class="package-description">Paket terjangkau dengan fasilitas standar di lokasi yang mudah diakses oleh keluarga.</p>
-                            <div class="package-location">
-                                <i class="ph ph-map-pin"></i>
-                                <span>Depok</span>
-                            </div>
-                            <div class="package-info">
-                                <i class="ph ph-ruler"></i>
-                                <span>Ukuran: 1.5m x 1.5m</span>
-                            </div>
-                            <div class="package-info">
-                                <i class="ph ph-plant"></i>
-                                <span>Fasilitas: Nisan Beton, Taman Umum</span>
-                            </div>
-                            <div class="package-price">Rp 25.000.000</div>
-                            <a href="booking.html?paket=Taman%20Abadi" class="btn-book">Booking Sekarang</a>
-                        </div>
-                    </div>
-
-                    <!-- Paket 7 -->
-                    <div class="package-card catalog-card" data-name="Sanctuary Hills" data-category="premium" data-location="Bogor">
-                        <div class="package-image">
-                            <img src="/img/sanctuary-hills.png" alt="Sanctuary Hills">
-                            <span class="package-badge">Premium</span>
-                        </div>
-                        <div class="package-content">
-                            <h3>Sanctuary Hills</h3>
-                            <p class="package-description">Lokasi di perbukitan dengan udara segar dan pemandangan kota yang menakjubkan.</p>
-                            <div class="package-location">
-                                <i class="ph ph-map-pin"></i>
-                                <span>Bogor</span>
-                            </div>
-                            <div class="package-info">
-                                <i class="ph ph-ruler"></i>
-                                <span>Ukuran: 2m x 2m</span>
-                            </div>
-                            <div class="package-info">
-                                <i class="ph ph-plant"></i>
-                                <span>Fasilitas: Nisan Granit, View Perbukitan</span>
-                            </div>
-                            <div class="package-price">Rp 48.000.000</div>
-                            <a href="booking.html?paket=Sanctuary%20Hills" class="btn-book">Booking Sekarang</a>
-                        </div>
-                    </div>
-
-                    <!-- Paket 8 -->
-                    <div class="package-card catalog-card" data-name="Royal Memorial" data-category="exclusive" data-location="Jakarta Selatan">
-                        <div class="package-image">
-                            <img src="/img/royal-memorial.png" alt="Royal Memorial">
-                            <span class="package-badge">Exclusive</span>
-                        </div>
-                        <div class="package-content">
-                            <h3>Royal Memorial</h3>
-                            <p class="package-description">Paket royal dengan area private garden dan desain arsitektur mewah untuk keluarga.</p>
-                            <div class="package-location">
-                                <i class="ph ph-map-pin"></i>
-                                <span>Jakarta Selatan</span>
-                            </div>
-                            <div class="package-info">
-                                <i class="ph ph-ruler"></i>
-                                <span>Ukuran: 4m x 4m</span>
-                            </div>
-                            <div class="package-info">
-                                <i class="ph ph-plant"></i>
-                                <span>Fasilitas: Makam Custom Premium, Private Garden</span>
-                            </div>
-                            <div class="package-price">Rp 95.000.000</div>
-                            <a href="booking.html?paket=Royal%20Memorial" class="btn-book">Booking Sekarang</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Paket 9 -->
-                    <div class="package-card catalog-card" data-name="Green Valley" data-category="standar" data-location="Cianjur">
-                        <div class="package-image">
-                            <img src="/img/green-valley.png" alt="Green Valley">
-                            <span class="package-badge">Standar</span>
-                        </div>
-                        <div class="package-content">
-                            <h3>Green Valley</h3>
-                            <p class="package-description">Taman di lembah hijau dengan suasana pedesaan yang menenangkan jiwa dan asri.</p>
-                            <div class="package-location">
-                                <i class="ph ph-map-pin"></i>
-                                <span>Cianjur</span>
-                            </div>
-                            <div class="package-info">
-                                <i class="ph ph-ruler"></i>
-                                <span>Ukuran: 1.5m x 2m</span>
-                            </div>
-                            <div class="package-info">
-                                <i class="ph ph-plant"></i>
-                                <span>Fasilitas: Nisan Natural Stone, Taman Alami</span>
-                            </div>
-                            <div class="package-price">Rp 30.000.000</div>
-                            <a href="booking.html?paket=Green%20Valley" class="btn-book">Booking Sekarang</a>
-                        </div>
-                    </div>
-
+            <!-- Paket 3 -->
+            <div
+              class="package-card catalog-card"
+              data-name="Memorial Garden Exclusive"
+              data-category="exclusive"
+              data-location="Jakarta Barat"
+            >
+              <div class="package-image">
+                <img src="img/memorialex.png" alt="Memorial Garden Exclusive" />
+                <span class="package-badge">Exclusive</span>
+              </div>
+              <div class="package-content">
+                <h3>Memorial Garden Exclusive</h3>
+                <p class="package-description">
+                  Paket eksklusif dengan desain kustom dan fasilitas terlengkap
+                  di area taman memorial private.
+                </p>
+                <div class="package-location">
+                  <i class="ph ph-map-pin"></i>
+                  <span>Jakarta Barat</span>
                 </div>
+                <div class="package-info">
+                  <i class="ph ph-ruler"></i>
+                  <span>Ukuran: 3m x 3m</span>
+                </div>
+                <div class="package-info">
+                  <i class="ph ph-plant"></i>
+                  <span>Fasilitas: Nisan Custom Design, Taman Private</span>
+                </div>
+                <div class="package-price">Rp 75.000.000</div>
+                <a
+                  href="booking.html?paket=Memorial%20Garden%20Exclusive"
+                  class="btn-book"
+                  >Booking Sekarang</a
+                >
+              </div>
             </div>
-        </section>
 
+            <!-- Paket 4 -->
+            <div
+              class="package-card catalog-card"
+              data-name="Taman Sejahtera"
+              data-category="standar"
+              data-location="Tangerang"
+            >
+              <div class="package-image">
+                <img src="img/tamansejahtera.png" alt="Taman Sejahtera" />
+                <span class="package-badge">Standar</span>
+              </div>
+              <div class="package-content">
+                <h3>Taman Sejahtera</h3>
+                <p class="package-description">
+                  Lokasi strategis dengan suasana tenang dan pemandangan hijau
+                  yang menenangkan jiwa.
+                </p>
+                <div class="package-location">
+                  <i class="ph ph-map-pin"></i>
+                  <span>Tangerang</span>
+                </div>
+                <div class="package-info">
+                  <i class="ph ph-ruler"></i>
+                  <span>Ukuran: 1.5m x 2m</span>
+                </div>
+                <div class="package-info">
+                  <i class="ph ph-plant"></i>
+                  <span>Fasilitas: Nisan Marmer, Taman Terawat</span>
+                </div>
+                <div class="package-price">Rp 32.000.000</div>
+                <a href="booking.html?paket=Taman%20Sejahtera" class="btn-book"
+                  >Booking Sekarang</a
+                >
+              </div>
+            </div>
+
+            <!-- Paket 5 -->
+            <div
+              class="package-card catalog-card"
+              data-name="Eternal Peace Premium"
+              data-category="premium"
+              data-location="Bekasi"
+            >
+              <div class="package-image">
+                <img src="img/eternal-peace.png" alt="Eternal Peace Premium" />
+                <span class="package-badge">Premium</span>
+              </div>
+              <div class="package-content">
+                <h3>Eternal Peace Premium</h3>
+                <p class="package-description">
+                  Area premium dengan jalur pejalan kaki yang indah dan
+                  pencahayaan malam yang menenangkan.
+                </p>
+                <div class="package-location">
+                  <i class="ph ph-map-pin"></i>
+                  <span>Bekasi</span>
+                </div>
+                <div class="package-info">
+                  <i class="ph ph-ruler"></i>
+                  <span>Ukuran: 2m x 2.5m</span>
+                </div>
+                <div class="package-info">
+                  <i class="ph ph-plant"></i>
+                  <span>Fasilitas: Nisan Granit, Lighting System</span>
+                </div>
+                <div class="package-price">Rp 52.000.000</div>
+                <a
+                  href="booking.html?paket=Eternal%20Peace%20Premium"
+                  class="btn-book"
+                  >Booking Sekarang</a
+                >
+              </div>
+            </div>
+
+            <!-- Paket 6 -->
+            <div
+              class="package-card catalog-card"
+              data-name="Taman Abadi"
+              data-category="standar"
+              data-location="Depok"
+            >
+              <div class="package-image">
+                <img src="img/taman-abadi.png" alt="Taman Abadi" />
+                <span class="package-badge">Standar</span>
+              </div>
+              <div class="package-content">
+                <h3>Taman Abadi</h3>
+                <p class="package-description">
+                  Paket terjangkau dengan fasilitas standar di lokasi yang mudah
+                  diakses oleh keluarga.
+                </p>
+                <div class="package-location">
+                  <i class="ph ph-map-pin"></i>
+                  <span>Depok</span>
+                </div>
+                <div class="package-info">
+                  <i class="ph ph-ruler"></i>
+                  <span>Ukuran: 1.5m x 1.5m</span>
+                </div>
+                <div class="package-info">
+                  <i class="ph ph-plant"></i>
+                  <span>Fasilitas: Nisan Beton, Taman Umum</span>
+                </div>
+                <div class="package-price">Rp 25.000.000</div>
+                <a href="booking.html?paket=Taman%20Abadi" class="btn-book"
+                  >Booking Sekarang</a
+                >
+              </div>
+            </div>
+
+            <!-- Paket 7 -->
+            <div
+              class="package-card catalog-card"
+              data-name="Sanctuary Hills"
+              data-category="premium"
+              data-location="Bogor"
+            >
+              <div class="package-image">
+                <img src="img/sanctuary-hills.png" alt="Sanctuary Hills" />
+                <span class="package-badge">Premium</span>
+              </div>
+              <div class="package-content">
+                <h3>Sanctuary Hills</h3>
+                <p class="package-description">
+                  Lokasi di perbukitan dengan udara segar dan pemandangan kota
+                  yang menakjubkan.
+                </p>
+                <div class="package-location">
+                  <i class="ph ph-map-pin"></i>
+                  <span>Bogor</span>
+                </div>
+                <div class="package-info">
+                  <i class="ph ph-ruler"></i>
+                  <span>Ukuran: 2m x 2m</span>
+                </div>
+                <div class="package-info">
+                  <i class="ph ph-plant"></i>
+                  <span>Fasilitas: Nisan Granit, View Perbukitan</span>
+                </div>
+                <div class="package-price">Rp 48.000.000</div>
+                <a href="booking.html?paket=Sanctuary%20Hills" class="btn-book"
+                  >Booking Sekarang</a
+                >
+              </div>
+            </div>
+
+            <!-- Paket 8 -->
+            <div
+              class="package-card catalog-card"
+              data-name="Royal Memorial"
+              data-category="exclusive"
+              data-location="Jakarta Selatan"
+            >
+              <div class="package-image">
+                <img src="img/royal-memorial.png" alt="Royal Memorial" />
+                <span class="package-badge">Exclusive</span>
+              </div>
+              <div class="package-content">
+                <h3>Royal Memorial</h3>
+                <p class="package-description">
+                  Paket royal dengan area private garden dan desain arsitektur
+                  mewah untuk keluarga.
+                </p>
+                <div class="package-location">
+                  <i class="ph ph-map-pin"></i>
+                  <span>Jakarta Selatan</span>
+                </div>
+                <div class="package-info">
+                  <i class="ph ph-ruler"></i>
+                  <span>Ukuran: 4m x 4m</span>
+                </div>
+                <div class="package-info">
+                  <i class="ph ph-plant"></i>
+                  <span>Fasilitas: Makam Custom Premium, Private Garden</span>
+                </div>
+                <div class="package-price">Rp 95.000.000</div>
+                <a href="booking.html?paket=Royal%20Memorial" class="btn-book"
+                  >Booking Sekarang</a
+                >
+              </div>
+            </div>
+
+            <!-- Paket 9 -->
+            <div
+              class="package-card catalog-card"
+              data-name="Green Valley"
+              data-category="standar"
+              data-location="Cianjur"
+            >
+              <div class="package-image">
+                <img src="img/green-valley.png" alt="Green Valley" />
+                <span class="package-badge">Standar</span>
+              </div>
+              <div class="package-content">
+                <h3>Green Valley</h3>
+                <p class="package-description">
+                  Taman di lembah hijau dengan suasana pedesaan yang menenangkan
+                  jiwa dan asri.
+                </p>
+                <div class="package-location">
+                  <i class="ph ph-map-pin"></i>
+                  <span>Cianjur</span>
+                </div>
+                <div class="package-info">
+                  <i class="ph ph-ruler"></i>
+                  <span>Ukuran: 1.5m x 2m</span>
+                </div>
+                <div class="package-info">
+                  <i class="ph ph-plant"></i>
+                  <span>Fasilitas: Nisan Natural Stone, Taman Alami</span>
+                </div>
+                <div class="package-price">Rp 30.000.000</div>
+                <a href="booking.html?paket=Green%20Valley" class="btn-book"
+                  >Booking Sekarang</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Script -->
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
-
