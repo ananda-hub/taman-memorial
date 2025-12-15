@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memorial Park - Tempat Peristirahatan Terakhir</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Ikon -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.0.3"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. Header & Navbar -->
+    <header id="main-header">
+        <nav class="container">
+            
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <div class="logo-icon">M</div>
+                <div class="logo-text">
+                    Memorial Park
+                    <span>Tempat Peristirahatan Terakhir</span>
+                </div>
+            </a>
+
+            <!-- Nav Links (Desktop) -->
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="index.html" class="active">Beranda</a></li>
+                <li><a href="katalog.html">Katalog</a></li>
+                <li><a href="tentang.html">Tentang</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+
+            <!-- Tombol CTA -->
+            <a href="kontak.html" class="cta-button">
+                <i class="ph-fill ph-phone"></i>
+                Hubungi Kami
+            </a>
+
+            <!-- Tombol Mobile Toggle -->
+            <button id="mobile-toggle">
+                <i class="ph ph-list"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 2. Hero Section -->
+        <section id="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content container">
+                <h1>Tempat Peristirahatan <span class="highlight">Terakhir</span> Yang Damai</h1>
+                <p>Taman memorial premium dengan pemandangan indah dan fasilitas lengkap</p>
+                <div class="hero-buttons">
+                    <a href="katalog.html" class="btn-primary">Lihat Katalog</a> 
+                    <a href="kontak.html" class="btn-outline">Hubungi Kami</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Features Section -->
+        <section id="features">
+            <div class="container">
+                <h2>Mengapa Memilih Kami?</h2>
+                <div class="title-accent"></div>
+
+                <div class="features-grid">
+                    
+                    <!-- Feature Card 1 -->
+                    <div class="feature-card">
+                        <div class="icon-circle">
+                            <i class="ph ph-map-pin"></i>
+                        </div>
+                        <h3>Lokasi Strategis</h3>
+                        <p>Mudah diakses dari berbagai wilayah</p>
+                    </div>
+                    
+                    <!-- Feature Card 2 -->
+                    <div class="feature-card">
+                        <div class="icon-circle">
+                            <i class="ph ph-certificate"></i>
+                        </div>
+                        <h3>Sertifikat Resmi</h3>
+                        <p>Legalitas lengkap dan terjamin</p>
+                    </div>
+                    
+                    <!-- Feature Card 3 -->
+                    <div class="feature-card">
+                        <div class="icon-circle">
+                            <i class="ph ph-clock-clockwise"></i>
+                        </div>
+                        <h3>Perawatan Berkala</h3>
+                        <p>Pemeliharaan taman secara rutin</p>
+                    </div>
+                    
+                    <!-- Feature Card 4 -->
+                    <div class="feature-card">
+                        <div class="icon-circle">
+                            <i class="ph ph-star"></i>
+                        </div>
+                        <h3>Fasilitas Premium</h3>
+                        <p>Taman indah dengan berbagai pilihan</p>
+                    </div>
+                </div>
+            </div>
+        </section> 
+
+        <!-- 4. Packages Section -->
+        <section id="packages">
+            <div class="container">
+                <h2>Paket Pilihan Kami</h2>
+                <div class="title-accent"></div>
+                <p class="section-subtitle">Pilihan terbaik untuk keluarga tercinta</p>
+
+                <div class="packages-grid">
+                    <!-- Package Card 1 -->
+                    <div class="package-card">
+                        <div class="package-image">
+                            <img src="/img/tamanharmoni.png" alt="Taman Harmoni Deluxe">
+                            <span class="package-badge">Premium</span>
+                        </div>
+                        <div class="package-content">
+                            <h3>Taman Harmoni Deluxe</h3>
+                            <p class="package-description">Paket premium dengan lokasi strategis di area taman yang paling indah dengan pemandangan danau.</p>
+                            <div class="package-location">
+                                <i class="ph ph-map-pin"></i>
+                                <span>Jakarta Selatan</span>
+                            </div>
+                            <div class="package-price">Rp 45.000.000</div>
+                            <a href="booking.html?paket=Taman%20Harmoni%20Deluxe" class="btn-book">Booking Sekarang</a>
+                        </div>
+                    </div>
+
+                    <!-- Package Card 2 -->
+                    <div class="package-card">
+                        <div class="package-image">
+                            <img src="/img/tamandamai.png" alt="Taman Damai Standar">
+                            <span class="package-badge">Standar</span>
+                        </div>
+                        <div class="package-content">
+                            <h3>Taman Damai Standar</h3>
+                            <p class="package-description">Paket standar dengan fasilitas lengkap di area taman yang asri dan nyaman untuk keluarga.</p>
+                            <div class="package-location">
+                                <i class="ph ph-map-pin"></i>
+                                <span>Jakarta Timur</span>
+                            </div>
+                            <div class="package-price">Rp 28.000.000</div>
+                            <a href="booking.html?paket=Taman%20Damai%20Standar" class="btn-book">Booking Sekarang</a>
+                        </div>
+                    </div>
+
+                    <!-- Package Card 3 -->
+                    <div class="package-card">
+                        <div class="package-image">
+                            <img src="/img/memorialex.png" alt="Memorial Garden Exclusive">
+                            <span class="package-badge">Exclusive</span>
+                        </div>
+                        <div class="package-content">
+                            <h3>Memorial Garden Exclusive</h3>
+                            <p class="package-description">Paket eksklusif dengan desain kustom dan fasilitas terlengkap di area taman memorial private.</p>
+                            <div class="package-location">
+                                <i class="ph ph-map-pin"></i>
+                                <span>Jakarta Barat</span>
+                            </div>
+                            <div class="package-price">Rp 75.000.000</div>
+                            <a href="booking.html?paket=Memorial%20Garden%20Exclusive" class="btn-book">Booking Sekarang</a>
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="section-cta">
+                    <a href="katalog.html" class="btn-outline-orange">Lihat Semua Paket</a>
+                </div>
+
+            </div>
+        </section> 
+
+        <!-- 5. Gallery Section -->
+        <section id="gallery">
+            <div class="container">
+                <h2>Galeri Lokasi</h2>
+                <div class="title-accent"></div>
+                <p class="section-subtitle">Taman memorial yang asri dan terawat</p>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="/img/tamanutama.png" alt="Taman Memorial Utama">
+                        <div class="gallery-overlay">
+                            <span>Taman Memorial Utama</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/img/pohonklasik.png" alt="Area Pohon Klasik">
+                        <div class="gallery-overlay">
+                            <span>Area Pohon Klasik</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/img/jembatan.png" alt="Jembatan Memorial">
+                        <div class="gallery-overlay">
+                            <span>Jembatan Memorial</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/img/tamanair.png" alt="Taman Air Bebatuan">
+                        <div class="gallery-overlay">
+                            <span>Taman Air Bebatuan</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/img/jalurpejalankaki.png" alt="Jalur Pejalan Kaki">
+                        <div class="gallery-overlay">
+                            <span>Jalur Pejalan Kaki</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/img/monumen.png" alt="Monumen Memorial">
+                        <div class="gallery-overlay">
+                            <span>Monumen Memorial</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> 
+
+        <!-- 6. Testimonials Section -->
+        <section id="testimonials">
+            <div class="container">
+                <h2>Testimoni Keluarga</h2>
+                <div class="title-accent"></div>
+                <p class="section-subtitle">Kepercayaan keluarga adalah prioritas kami</p>
+
+                <div class="testimonials-grid">
+                    <!-- Testimonial Card 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                        </div>
+                        <p>"Sangat puas dengan pelayanan dan fasilitas yang diberikan. Tempat yang sangat indah dan tenang untuk almarhum ayah saya."</p>
+                        <div class="testimonial-profile">
+                            <div class="testimonial-avatar">B</div>
+                            <div class="testimonial-profile-info">
+                                <h4>Budi Santoso</h4>
+                                <span>Jakarta</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial Card 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                        </div>
+                        <p>"Tim yang sangat profesional dan penuh empati. Taman memorial yang indah dan terawat dengan baik. Terima kasih atas layanannya."</p>
+                        <div class="testimonial-profile">
+                            <div class="testimonial-avatar">S</div>
+                            <div class="testimonial-profile-info">
+                                <h4>Siti Nurhaliza</h4>
+                                <span>Tangerang</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Testimonial Card 3 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                        </div>
+                        <p>"Harga yang reasonable dengan kualitas fasilitas yang premium. Sangat merekomendasikan untuk keluarga yang mencari tempat terbaik."</p>
+                        <div class="testimonial-profile">
+                            <div class="testimonial-avatar">A</div>
+                            <div class="testimonial-profile-info">
+                                <h4>Ahmad Wijaya</h4>
+                                <span>Bekasi</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
+

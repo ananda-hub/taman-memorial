@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak Kami - Memorial Park</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Ikon -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.0.3"></script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header (Navbar) -->
+    <!-- (PENTING): "scrolled" ditambahkan agar navbar putih dari awal di halaman ini -->
+    <header id="main-header"> 
+        <nav class="container">
+            
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <div class="logo-icon">M</div>
+                <div class="logo-text">
+                    Memorial Park
+                    <span>Tempat Peristirahatan Terakhir</span>
+                </div>
+            </a>
+
+            <!-- Nav Links -->
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="katalog.html">Katalog</a></li>
+                <li><a href="tentang.html">Tentang</a></li>
+                <li><a href="kontak.html" class="active">Kontak</a></li>
+            </ul>
+
+            <!-- Tombol CTA -->
+            <a href="kontak.html" class="cta-button"> <!-- Link CTA diubah ke kontak.html juga -->
+                <i class="ph-fill ph-phone"></i>
+                Hubungi Kami
+            </a>
+
+            <!-- Tombol Mobile -->
+            <button id="mobile-toggle">
+                <i class="ph ph-list"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        
+        <!-- Hero Section Halaman Kontak -->
+        <!-- Menggunakan ID dan class yang SAMA dengan hero Katalog untuk gaya yang konsisten -->
+        <section id="catalog-hero"> 
+            <div class="catalog-hero-content"> 
+                <h1>Hubungi Kami</h1>
+                <div class="title-accent"></div>
+                <p>Kami siap membantu Anda 24/7</p>
+            </div>
+        </section>
+
+        <!-- Bagian Konten Kontak (Info & Form) -->
+        <section id="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    
+                    <!-- Kolom Kiri: Informasi Kontak -->
+                    <div class="contact-info">
+                        <h2>Informasi Kontak</h2>
+                        <div class="title-accent-left"></div>
+                        <p class="contact-subtitle">Tim profesional kami siap memberikan konsultasi dan membantu Anda menemukan tempat peristirahatan terbaik untuk keluarga tercinta.</p>
+
+                        <!-- Info Card: Telepon -->
+                        <div class="info-card">
+                            <div class="icon-circle">
+                                <i class="ph ph-phone"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Telepon</h3>
+                                <span>+62 21 1234 5678</span>
+                                <span>+62 812 3456 7890</span>
+                            </div>
+                        </div>
+
+                        <!-- Info Card: Email -->
+                        <div class="info-card">
+                            <div class="icon-circle">
+                                <i class="ph ph-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Email</h3>
+                                <span>info@memorialpark.com</span>
+                                <span>cs@memorialpark.com</span>
+                            </div>
+                        </div>
+
+                        <!-- Info Card: Alamat -->
+                        <div class="info-card">
+                            <div class="icon-circle">
+                                <i class="ph ph-map-pin"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Alamat Kantor</h3>
+                                <span>Jl. Raya Memorial No. 123<br>Jakarta Selatan, 12345</span>
+                            </div>
+                        </div>
+
+                        <!-- Info Card: Jam Operasional -->
+                        <div class="info-card">
+                            <div class="icon-circle">
+                                <i class="ph ph-clock"></i>
+                            </div>
+                            <div class="info-content">
+                                <h3>Jam Operasional</h3>
+                                <span>Senin - Jumat: 08:00 - 17:00</span>
+                                <span>Sabtu - Minggu: 08:00 - 16:00</span>
+                                <span class="highlight-text">Layanan Darurat 24/7</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kolom Kanan: Formulir -->
+                    <div class="contact-form">
+                        <form action="#">
+                            <h3>Kirim Pesan</h3>
+                            
+                            <div class="form-group">
+                                <label for="nama">Nama Lengkap <span>*</span></label>
+                                <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email <span>*</span></label>
+                                <input type="email" id="email" name="email" placeholder="nama@email.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="telepon">Nomor Telepon <span>*</span></label>
+                                <input type="tel" id="telepon" name="telepon" placeholder="08xx xxxx xxxx" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subjek">Subjek</label>
+                                <input type="text" id="subjek" name="subjek" placeholder="Perihal pesan Anda">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="pesan">Pesan <span>*</span></label>
+                                <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-primary">Kirim Pesan</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- (BARU) Bagian Peta Lokasi -->
+        <section id="location-section">
+            <div class="container">
+                <h2 style="text-align: center;">Lokasi Kami</h2>
+                <div class="title-accent"></div>
+                
+                <!-- Peta Google Maps yang Disematkan -->
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.476766943542!2d106.827152815349!3d-6.175392395529156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2e764b12d%3A0x3d2ad6e1e0e9bcc8!2sMonumen%20Nasional!5e0!3m2!1sid!2sid!4v1671234567890!5m2!1sid!2sid" 
+                        width="100%" 
+                        height="450" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
+

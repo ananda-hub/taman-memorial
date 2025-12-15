@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking - Memorial Park</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Ikon -->
+    <script src="https://unpkg.com/@phosphor-icons/web@2.0.3"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. Header & Navbar (DIPAKSA PUTIH) -->
+    <header id="main-header">
+        <nav class="container">
+            
+            <!-- Logo -->
+            <a href="index.html" class="logo">
+                <div class="logo-icon">M</div>
+                <div class="logo-text">
+                    Memorial Park
+                    <span>Tempat Peristirahatan Terakhir</span>
+                </div>
+            </a>
+
+            <!-- Nav Links (Desktop) -->
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="katalog.html">Katalog</a></li>
+                <li><a href="tentang.html">Tentang</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+
+            <!-- Tombol CTA -->
+            <a href="kontak.html" class="cta-button">
+                <i class="ph-fill ph-phone"></i>
+                Hubungi Kami
+            </a>
+
+            <!-- Tombol Mobile Toggle -->
+            <button id="mobile-toggle">
+                <i class="ph ph-list"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        
+        <!-- 2. Booking Hero Section -->
+        <section id="catalog-hero"> <!-- Menggunakan style hero yang sama -->
+            <div class="catalog-hero-content">
+                <h1>Booking Pemakaman</h1>
+                <div class="title-accent"></div>
+                <p>Reservasi mudah dan cepat</p>
+            </div>
+        </section>
+
+        <!-- 3. Booking Content Section -->
+        <section id="booking-section">
+            <div class="container">
+                <div class="booking-grid">
+                    
+                    <!-- Kolom Kiri: Detail Paket (Dinamis) -->
+                    <div class="booking-package-details">
+                        
+                        <!-- Placeholder jika tidak ada paket dipilih -->
+                        <div id="no-package-selected" class="hidden">
+                            <h3>Paket tidak ditemukan</h3>
+                            <p>Silakan kembali ke halaman <a href="katalog.html">katalog</a> untuk memilih paket.</p>
+                        </div>
+
+                        <!-- 
+                          Semua 9 Card Paket ada di sini.
+                          Secara default disembunyikan (.hidden).
+                          JavaScript akan menampilkan yang benar berdasarkan URL.
+                        -->
+
+                        <!-- Paket 1 -->
+                        <div class="package-card catalog-card hidden" data-name="Taman Harmoni Deluxe">
+                            <div class="package-image">
+                                <img src="https://placehold.co/600x400/5E6A77/FFFFFF?text=Taman+Harmoni" alt="Taman Harmoni Deluxe">
+                                <span class="package-badge">Premium</span>
+                            </div>
+                            <div class="package-content">
+                                <h3>Taman Harmoni Deluxe</h3>
+                                <p class="package-description">Paket premium dengan lokasi strategis di area taman yang paling indah dengan pemandangan danau.</p>
+                                <div class="package-location">
+                                    <i class="ph ph-map-pin"></i>
+                                    <span>Jakarta Selatan</span>
+                                </div>
+                                <div class="package-info">
+                                    <i class="ph ph-ruler"></i>
+                                    <span>Ukuran: 2m x 2m</span>
+                                </div>
+                                
+                                <!-- Fasilitas Baru -->
+                                <h4 class="facilities-title">Fasilitas:</h4>
+                                <ul class="facilities-list">
+                                    <li><i class="ph-fill ph-check-circle"></i>Nisan Granit Premium</li>
+                                    <li><i class="ph-fill ph-check-circle"></i>Taman Bunga</li>
+                                    <li><i class="ph-fill ph-check-circle"></i>Perawatan 3 Tahun</li>
+                                </ul>
+                                
+                                <div class="package-price">Rp 45.000.000</div>
+                                <!-- Tidak perlu tombol booking di sini -->
+                            </div>
+                        </div>
+
+                        <!-- Paket 2 -->
+                        <div class="package-card catalog-card hidden" data-name="Taman Damai Standar">
+                            <div class="package-image">
+                                <img src="https://placehold.co/600x400/4A5C4F/FFFFFF?text=Taman+Damai" alt="Taman Damai Standar">
+                                <span class="package-badge">Standar</span>
+                            </div>
+                            <div class="package-content">
+                                <h3>Taman Damai Standar</h3>
+                                <p class="package-description">Paket standar dengan fasilitas lengkap di area taman yang asri dan nyaman untuk keluarga.</p>
+                                <div class="package-location">
+                                    <i class="ph ph-map-pin"></i>
+                                    <span>Jakarta Timur</span>
+                                </div>
+                                <div class="package-info">
+                                    <i class="ph ph-ruler"></i>
+                                    <span>Ukuran: 1.5m x 2m</span>
+                                </div>
+
+                                <!-- Fasilitas Baru -->
+                                <h4 class="facilities-title">Fasilitas:</h4>
+                                <ul class="facilities-list">
+                                    <li><i class="ph-fill ph-check-circle"></i>Nisan Marmer</li>
+                                    <li><i class="ph-fill ph-check-circle"></i>Taman Hijau</li>
+                                    <li><i class="ph-fill ph-check-circle"></i>Area Parkir</li>
+                                    <li><i class="ph-fill ph-check-circle"></i>Perawatan 3 Tahun</li>
+                                </ul>
+                                
+                                <div class="package-price">Rp 28.000.000</div>
+                            </div>
+                        </div>
+
+                        <!-- Paket 3 -->
+                        <div class="package-card catalog-card hidden" data-name="Memorial Garden Exclusive">
+                            <div class="package-image">
+                                <img src="https://placehold.co/600x400/6B7A60/FFFFFF?text=Garden+Exclusive" alt="Memorial Garden Exclusive">
+                                <span class="package-badge">Exclusive</span>
+                            </div>
+                            <div class="package-content">
+                                <h3>Memorial Garden Exclusive</h3>
+                                <p class="package-description">Paket eksklusif dengan desain kustom dan fasilitas terlengkap di area taman memorial private.</p>
+                                <div class="package-location">
+                                    <i class="ph ph-map-pin"></i>
+                                    <span>Jakarta Barat</span>
+                                </div>
+                                <div class="package-info">
+                                    <i class="ph ph-ruler"></i>
+                                    <span>Ukuran: 3m x 3m</span>
+                                </div>
+                                
+                                <!-- Fasilitas Baru -->
+                                <h4 class="facilities-title">Fasilitas:</h4>
+                                <ul class="facilities-list">
+                                    <li><i class="ph-fill ph-check-circle"></i>Nisan Custom Design</li>
+                                    <li><i class="ph-fill ph-check-circle"></i>Taman Private</li>
+                                </ul>
+
+                                <div class="package-price">Rp 75.000.000</div>
+                            </div>
+                        </div>
+
+                        <!-- Paket 4 -->
+                        <div class="package-card catalog-card hidden" data-name="Taman Sejahtera">
+                            <div class="package-image">
+                                <img src="https://placehold.co/600x400/556B2F/FFFFFF?text=Taman+Sejahtera" alt="Taman Sejahtera">
+                                <span class="package-badge">Standar</span>
+                            </div>
+                            <div class="package-content">
+                                <h3>Taman Sejahtera</h3>
+                                <p class="package-description">Lokasi strategis dengan suasana tenang dan pemandangan hijau yang menenangkan jiwa.</p>
+                                <div class="package-location">
+                                    <i class="ph ph-map-pin"></i>
+                                    <span>Tangerang</span>
+                                </div>
+                                <div class="package-info">
+                                    <i class="ph ph-ruler"></i>
+                                    <span>Ukuran: 1.5m x 2m</span>
+                                </div>
+                                
+                                <!-- Fasilitas Baru -->
+                                <h4 class="facilities-title">Fasilitas:</h4>
+                                <ul class="facilities-list">
+                                    <li><i class="ph-fill ph-check-circle"></i>Nisan Marmer</li>
+                                    <li><i class="ph-fill ph-check-circle"></i>Taman Terawat</li>
+                                </ul>
+
+                                <div class="package-price">Rp 32.000.000</div>
+                            </div>
+                        </div>
+
+                        <!-- Paket 5 -->
+                        <div class="package-card catalog-card hidden" data-name="Eternal Peace Premium">
+                            <div class="package-image">
+                                <img src="https://placehold.co/600x400/4B5320/FFFFFF?text=Eternal+Peace" alt="Eternal Peace Premium">
+                                <span class="package-badge">Premium</span>
+                            </div>
+                            <div class="package-content">
+                                <h3>Eternal Peace Premium</h3>
+                                <p class="package-description">Area premium dengan jalur pejalan kaki yang indah dan pencahayaan malam yang menenangkan.</p>
+                                <div class="package-location">
+                                    <i class="ph ph-map-pin"></i>
+                                    <span>Bekasi</span>
+                                </div>
+                                <div class="package-info">
+                                    <i class="ph ph-ruler"></i>
+                                    <span>Ukuran: 2m x 2.5m</span>
+                                </div>
+                                
+                                <!-- Fasilitas Baru -->
+                                <h4 class="facilities-title">Fasilitas:</h4>
+                                <ul class="facilities-list">
+                                    <li><i class="ph-fill ph-check-circle"></i>Nisan Granit</li>
+                                    <li><i class="ph-fill ph-check-circle"></i>Lighting System</li>
+                                </ul>
+
+                                <div class="package-price">Rp 52.000.000</div>
+                            </div>
+                        </div>
+
+                        <!-- Paket 6 -->
+                        <div class="package-card catalog-card hidden" data-name="Taman Abadi">
+                            <div class="package-image">
+                                <img src="https://placehold.co/600x400/8F9779/FFFFFF?text=Taman+Abadi" alt="Taman Abadi">
+                                <span class="package-badge">Standar</span>
+                            </div>
+                            <div class="package-content">
+                                <h3>Taman Abadi</h3>
+                                <p class="package-description">Paket terjangkau dengan fasilitas standar di lokasi yang mudah diakses oleh keluarga.</p>
+                                <div class="package-location">
+                                    <i class="ph ph-map-pin"></i>
+                                    <span>Depok</span>
+                                </div>
+                                <div class="package-info">
+                                    <i class="ph ph-ruler"></i>
+                                    <span>Ukuran: 1.5m x 1.5m</span>
+                                </div>
+                                
+                                <!-- Fasilitas Baru -->
+                                <h4 class="facilities-title">Fasilitas:</h4>
+                                <ul class="facilities-list">
+                                    <li><i class="ph-fill ph-check-circle"></i>Nisan Beton</li>
+                                    <li><i class="ph-fill ph-check-circle"></i>Taman Umum</li>
+                                </ul>
+
+                                <div class="package-price">Rp 25.000.000</div>
+                            </div>
+                        </div>
+
+                        <!-- Paket 7 -->
+                        <div class="package-card catalog-card hidden" data-name="Sanctuary Hills">
+                            <div class="package-image">
+                                <img src="https://placehold.co/600x400/95A5A6/FFFFFF?text=Sanctuary+Hills" alt="Sanctuary Hills">
+                                <span class="package-badge">Premium</span>
+                            </div>
+                            <div class="package-content">
+                                <h3>Sanctuary Hills</h3>
+                                <p class="package-description">Lokasi di perbukitan dengan udara segar dan pemandangan kota yang menakjubkan.</p>
+                                <div class="package-location">
+                                    <i class="ph ph-map-pin"></i>
+                                    <span>Bogor</span>
+                                </div>
+                                <div class="package-info">
+                                    <i class="ph ph-ruler"></i>
+                                    <span>Ukuran: 2m x 2m</span>
+                                </div>
+                                
+                                <!-- Fasilitas Baru -->
+                                <h4 class="facilities-title">Fasilitas:</h4>
+                                <ul class="facilities-list">
+                                    <li><i class="ph-fill ph-check-circle"></i>Nisan Granit</li>
+                                    <li><i class="ph-fill ph-check-circle"></i>View Perbukitan</li>
+                                </ul>
+
+                                <div class="package-price">Rp 48.000.000</div>
+                            </div>
+                        </div>
+
+                        <!-- Paket 8 -->
+                        <div class="package-card catalog-card hidden" data-name="Royal Memorial">
+                            <div class="package-image">
+                                <img src="https://placehold.co/600x400/BDC3C7/FFFFFF?text=Royal+Memorial" alt="Royal Memorial">
+                                <span class="package-badge">Exclusive</span>
+                            </div>
+                            <div class="package-content">
+                                <h3>Royal Memorial</h3>
+                                <p class="package-description">Paket royal dengan area private garden dan desain arsitektur mewah untuk keluarga.</p>
+                                <div class="package-location">
+                                    <i class="ph ph-map-pin"></i>
+                                    <span>Jakarta Selatan</span>
+                                </div>
+                                <div class="package-info">
+                                    <i class="ph ph-ruler"></i>
+                                    <span>Ukuran: 4m x 4m</span>
+                                </div>
+                                
+                                <!-- Fasilitas Baru -->
+                                <h4 class="facilities-title">Fasilitas:</h4>
+                                <ul class="facilities-list">
+                                    <li><i class="ph-fill ph-check-circle"></i>Makam Custom Premium</li>
+                                    <li><i class="ph-fill ph-check-circle"></i>Private Garden</li>
+                                </ul>
+
+                                <div class="package-price">Rp 95.000.000</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Paket 9 -->
+                        <div class="package-card catalog-card hidden" data-name="Green Valley">
+                            <div class="package-image">
+                                <img src="https://placehold.co/600x400/27AE60/FFFFFF?text=Green+Valley" alt="Green Valley">
+                                <span class="package-badge">Standar</span>
+                            </div>
+                            <div class="package-content">
+                                <h3>Green Valley</h3>
+                                <p class="package-description">Taman di lembah hijau dengan suasana pedesaan yang menenangkan jiwa dan asri.</p>
+                                <div class="package-location">
+                                    <i class="ph ph-map-pin"></i>
+                                    <span>Cianjur</span>
+                                </div>
+                                <div class="package-info">
+                                    <i class="ph ph-ruler"></i>
+                                    <span>Ukuran: 1.5m x 2m</span>
+                                </div>
+                                
+                                <!-- Fasilitas Baru -->
+                                <h4 class="facilities-title">Fasilitas:</h4>
+                                <ul class="facilities-list">
+                                    <li><i class="ph-fill ph-check-circle"></i>Nisan Natural Stone</li>
+                                    <li><i class="ph-fill ph-check-circle"></i>Taman Alami</li>
+                                </ul>
+
+                                <div class="package-price">Rp 30.000.000</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Kolom Kanan: Formulir Booking -->
+                    <div class="booking-form-container">
+                        <h3>Formulir Booking</h3>
+                        <p class="form-subtitle">Isi formulir di bawah ini untuk booking konsultasi dan kunjungan lokasi. Tim kami akan menghubungi Anda untuk konfirmasi.</p>
+                        
+                        <form action="#" class="booking-form">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="nama">Nama Lengkap <span>*</span></label>
+                                    <input type="text" id="nama" placeholder="Masukkan nama lengkap" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email <span>*</span></label>
+                                    <input type="email" id="email" placeholder="nama@email.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="telepon">Nomor Telepon <span>*</span></label>
+                                    <input type="tel" id="telepon" placeholder="08xx xxxx xxxx" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="waktu">Waktu Kunjungan <span>*</span></label>
+                                    <div class="custom-select-wrapper"></div>
+                                    <select id="waktu" required>
+                                        <option value="" disabled selected hidden>Pilih waktu</option>
+                                        <option value="pagi">Pagi (08:00 - 11:00)</option>
+                                        <option value="siang">Siang (11:00 - 14:00)</option>
+                                        <option value="sore">Sore (14:00 - 17:00)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="alamat">Alamat Lengkap <span>*</span></label>
+                                <input type="text" id="alamat" placeholder="Masukkan alamat lengkap" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="tanggal">Tanggal Kunjungan <span>*</span></label>
+                                <input type_="date" id="tanggal" placeholder="Pilih tanggal kunjungan" onfocus="(this.type='date')" onblur="(this.type='text')" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="catatan">Catatan Tambahan</label>
+                                <textarea id="catatan" rows="4" placeholder="Informasi tambahan atau pertanyaan khusus..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn-primary">Kirim Booking</button>
+
+                            <p class="form-note">Catatan: Setelah Anda mengirimkan formulir ini, tim kami akan menghubungi Anda dalam waktu 1x24 jam untuk konfirmasi booking.</p>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
+
