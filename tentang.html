@@ -1,171 +1,200 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tentang Kami - Memorial Park</title>
-    
+
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Ikon -->
     <script src="https://unpkg.com/@phosphor-icons/web@2.0.3"></script>
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <!-- Header (Navbar) -->
     <!-- (PERBAIKAN): "scrolled" dihapus agar navbar transparan di awal -->
-    <header id="main-header"> 
-        <nav class="container">
-            
-            <!-- Logo -->
-            <a href="index.html" class="logo">
-                <div class="logo-icon">M</div>
-                <div class="logo-text">
-                    Memorial Park
-                    <span>Tempat Peristirahatan Terakhir</span>
-                </div>
-            </a>
+    <header id="main-header">
+      <nav class="container">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+          <div class="logo-icon">M</div>
+          <div class="logo-text">
+            Memorial Park
+            <span>Tempat Peristirahatan Terakhir</span>
+          </div>
+        </a>
 
-            <!-- Nav Links -->
-            <ul class="nav-links" id="nav-menu">
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="katalog.html">Katalog</a></li>
-                <li><a href="tentang.html" class="active">Tentang</a></li>
-                <li><a href="kontak.html">Kontak</a></li>
-            </ul>
+        <!-- Nav Links -->
+        <ul class="nav-links" id="nav-menu">
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="katalog.html">Katalog</a></li>
+          <li><a href="tentang.html" class="active">Tentang</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
 
-            <!-- Tombol CTA -->
-            <a href="kontak.html" class="cta-button">
-                <i class="ph-fill ph-phone"></i>
-                Hubungi Kami
-            </a>
+        <!-- Tombol CTA -->
+        <a href="kontak.html" class="cta-button">
+          <i class="ph-fill ph-phone"></i>
+          Hubungi Kami
+        </a>
 
-            <!-- Tombol Mobile -->
-            <button id="mobile-toggle">
-                <i class="ph ph-list"></i>
-            </button>
-        </nav>
+        <!-- Tombol Mobile -->
+        <button id="mobile-toggle">
+          <i class="ph ph-list"></i>
+        </button>
+      </nav>
     </header>
 
     <main>
-        
-        <!-- Hero Section Halaman Tentang -->
-        <!-- Menggunakan ID dan class yang SAMA dengan hero Katalog untuk gaya yang konsisten -->
-        <section id="catalog-hero"> 
-            <!-- <div class="hero-overlay"></div> (PERBAIKAN): Overlay dihapus agar tidak menutupi -->
-            <!-- (PERBAIKAN): Menggunakan class "catalog-hero-content" untuk perataan tengah & gaya yang benar -->
-            <div class="catalog-hero-content"> 
-                <h1>Tentang Kami</h1>
-                <div class="title-accent"></div>
-                <p>Melayani dengan hati, memberikan tempat peristirahatan terbaik untuk keluarga tercinta</p>
+      <!-- Hero Section Halaman Tentang -->
+      <!-- Menggunakan ID dan class yang SAMA dengan hero Katalog untuk gaya yang konsisten -->
+      <section id="catalog-hero">
+        <!-- <div class="hero-overlay"></div> (PERBAIKAN): Overlay dihapus agar tidak menutupi -->
+        <!-- (PERBAIKAN): Menggunakan class "catalog-hero-content" untuk perataan tengah & gaya yang benar -->
+        <div class="catalog-hero-content">
+          <h1>Tentang Kami</h1>
+          <div class="title-accent"></div>
+          <p>
+            Melayani dengan hati, memberikan tempat peristirahatan terbaik untuk
+            keluarga tercinta
+          </p>
+        </div>
+      </section>
+
+      <!-- Bagian Profil Perusahaan -->
+      <section id="profile-section">
+        <div class="container">
+          <div class="profile-grid">
+            <div class="profile-text">
+              <h2>Profil Perusahaan</h2>
+              <div class="title-accent-left"></div>
+              <p>
+                Kami adalah penyedia jasa pemakaman terpercaya yang telah
+                melayani ribuan keluarga Indonesia. Dengan pengalaman lebih dari
+                15 tahun, kami memahami pentingnya memberikan tempat
+                peristirahatan yang bermartabat dan penuh kehormatan.
+              </p>
+              <p>
+                Taman memorial kami dirancang dengan konsep modern dan natural,
+                menciptakan suasana damai yang memberikan kenyamanan bagi
+                keluarga yang berkunjung. Setiap detail diperhatikan dengan
+                seksama untuk memastikan kualitas terbaik.
+              </p>
+              <p>
+                Kami berkomitmen untuk menyediakan layanan profesional,
+                fasilitas premium, dan perawatan berkala yang menjaga keindahan
+                dan kesucian taman memorial.
+              </p>
             </div>
-        </section>
-
-        <!-- Bagian Profil Perusahaan -->
-        <section id="profile-section">
-            <div class="container">
-                <div class="profile-grid">
-                    <div class="profile-text">
-                        <h2>Profil Perusahaan</h2>
-                        <div class="title-accent-left"></div>
-                        <p>Kami adalah penyedia jasa pemakaman terpercaya yang telah melayani ribuan keluarga Indonesia. Dengan pengalaman lebih dari 15 tahun, kami memahami pentingnya memberikan tempat peristirahatan yang bermartabat dan penuh kehormatan.</p>
-                        <p>Taman memorial kami dirancang dengan konsep modern dan natural, menciptakan suasana damai yang memberikan kenyamanan bagi keluarga yang berkunjung. Setiap detail diperhatikan dengan seksama untuk memastikan kualitas terbaik.</p>
-                        <p>Kami berkomitmen untuk menyediakan layanan profesional, fasilitas premium, dan perawatan berkala yang menjaga keindahan dan kesucian taman memorial.</p>
-                    </div>
-                    <div class="profile-image">
-                        <img src="https://placehold.co/600x400/6B7A60/FFFFFF?text=Profil+Perusahaan" alt="Profil Perusahaan Memorial Park">
-                    </div>
-                </div>
+            <div class="profile-image">
+              <img
+                src="img/perusahaan.png"
+                alt="Profil Perusahaan Memorial Park"
+              />
             </div>
-        </section>
-        
-        <!-- (KEMBALI DITAMBAHKAN) Bagian Visi, Misi & Nilai-Nilai -->
-        <section id="vision-mission-section">
-            <div class="container">
-                
-                <!-- Grid 2 Kolom: Visi & Misi -->
-                <div class="vision-mission-grid">
-                    <!-- Card Visi -->
-                    <div class="feature-card">
-                        <div class="icon-circle">
-                            <i class="ph ph-eye"></i>
-                        </div>
-                        <h3>Visi</h3>
-                        <p>Menjadi penyedia layanan pemakaman terdepan di Indonesia yang dikenal dengan kualitas, profesionalisme, dan kepedulian terhadap keluarga yang berduka.</p>
-                    </div>
-                    
-                    <!-- Card Misi -->
-                    <div class="feature-card">
-                        <div class="icon-circle">
-                            <i class="ph ph-target"></i>
-                        </div>
-                        <h3>Misi</h3>
-                        <ul>
-                            <li><i class="ph-fill ph-check-circle"></i> Memberikan layanan pemakaman berkualitas tinggi dengan harga terjangkau</li>
-                            <li><i class="ph-fill ph-check-circle"></i> Menciptakan taman memorial yang indah dan terawat</li>
-                            <li><i class="ph-fill ph-check-circle"></i> Melayani dengan empati dan profesionalisme</li>
-                        </ul>
-                    </div>
-                </div>
+          </div>
+        </div>
+      </section>
 
-                <!-- Judul "Nilai-Nilai Kami" -->
-                <div class="values-title">
-                    <h2>Nilai-Nilai Kami</h2>
-                    <div class="title-accent"></div>
-                </div>
-
-                <!-- Grid 4 Kolom: Nilai-Nilai (Menggunakan ulang style .features-grid) -->
-                <div class="features-grid">
-                    <!-- Card Integritas -->
-                    <div class="feature-card">
-                        <div class="icon-circle">
-                            <i class="ph ph-scales"></i>
-                        </div>
-                        <h3>Integritas</h3>
-                        <p>Transparansi dan kejujuran dalam setiap layanan</p>
-                    </div>
-                    
-                    <!-- Card Kepedulian -->
-                    <div class="feature-card">
-                        <div class="icon-circle">
-                            <i class="ph ph-users-three"></i>
-                        </div>
-                        <h3>Kepedulian</h3>
-                        <p>Empati dan perhatian penuh kepada keluarga</p>
-                    </div>
-                    
-                    <!-- Card Profesional -->
-                    <div class="feature-card">
-                        <div class="icon-circle">
-                            <i class="ph ph-briefcase"></i>
-                        </div>
-                        <h3>Profesional</h3>
-                        <p>Standar layanan tertinggi dalam industri</p>
-                    </div>
-                    
-                    <!-- Card Kualitas -->
-                    <div class="feature-card">
-                        <div class="icon-circle">
-                            <i class="ph ph-star"></i>
-                        </div>
-                        <h3>Kualitas</h3>
-                        <p>Fasilitas premium dan perawatan terbaik</p>
-                    </div>
-                </div>
-
+      <!-- (KEMBALI DITAMBAHKAN) Bagian Visi, Misi & Nilai-Nilai -->
+      <section id="vision-mission-section">
+        <div class="container">
+          <!-- Grid 2 Kolom: Visi & Misi -->
+          <div class="vision-mission-grid">
+            <!-- Card Visi -->
+            <div class="feature-card">
+              <div class="icon-circle">
+                <i class="ph ph-eye"></i>
+              </div>
+              <h3>Visi</h3>
+              <p>
+                Menjadi penyedia layanan pemakaman terdepan di Indonesia yang
+                dikenal dengan kualitas, profesionalisme, dan kepedulian
+                terhadap keluarga yang berduka.
+              </p>
             </div>
-        </section>
 
+            <!-- Card Misi -->
+            <div class="feature-card">
+              <div class="icon-circle">
+                <i class="ph ph-target"></i>
+              </div>
+              <h3>Misi</h3>
+              <ul>
+                <li>
+                  <i class="ph-fill ph-check-circle"></i> Memberikan layanan
+                  pemakaman berkualitas tinggi dengan harga terjangkau
+                </li>
+                <li>
+                  <i class="ph-fill ph-check-circle"></i> Menciptakan taman
+                  memorial yang indah dan terawat
+                </li>
+                <li>
+                  <i class="ph-fill ph-check-circle"></i> Melayani dengan empati
+                  dan profesionalisme
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Judul "Nilai-Nilai Kami" -->
+          <div class="values-title">
+            <h2>Nilai-Nilai Kami</h2>
+            <div class="title-accent"></div>
+          </div>
+
+          <!-- Grid 4 Kolom: Nilai-Nilai (Menggunakan ulang style .features-grid) -->
+          <div class="features-grid">
+            <!-- Card Integritas -->
+            <div class="feature-card">
+              <div class="icon-circle">
+                <i class="ph ph-scales"></i>
+              </div>
+              <h3>Integritas</h3>
+              <p>Transparansi dan kejujuran dalam setiap layanan</p>
+            </div>
+
+            <!-- Card Kepedulian -->
+            <div class="feature-card">
+              <div class="icon-circle">
+                <i class="ph ph-users-three"></i>
+              </div>
+              <h3>Kepedulian</h3>
+              <p>Empati dan perhatian penuh kepada keluarga</p>
+            </div>
+
+            <!-- Card Profesional -->
+            <div class="feature-card">
+              <div class="icon-circle">
+                <i class="ph ph-briefcase"></i>
+              </div>
+              <h3>Profesional</h3>
+              <p>Standar layanan tertinggi dalam industri</p>
+            </div>
+
+            <!-- Card Kualitas -->
+            <div class="feature-card">
+              <div class="icon-circle">
+                <i class="ph ph-star"></i>
+              </div>
+              <h3>Kualitas</h3>
+              <p>Fasilitas premium dan perawatan terbaik</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Script -->
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
-
